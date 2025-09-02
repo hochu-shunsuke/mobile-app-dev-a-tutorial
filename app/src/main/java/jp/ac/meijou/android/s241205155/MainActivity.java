@@ -1,6 +1,8 @@
 package jp.ac.meijou.android.s241205155;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,7 +26,30 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        //ここでapp_nameに置き換えている！
-        binding.text.setText(R.string.app_name);
+        binding.button.setOnClickListener(view -> {
+            var text1 = binding.editTextText.getText().toString();
+            binding.text.setText(text1);
+        });
+
+        binding.editTextText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // テキストが更新される直前に呼ばれる
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // 文字を1つ入力された時に呼ばれる
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // テキストが更新された"後"に呼ばれる処理です。
+                // 'editable'には、editTextTextの現在のテキストが入っています。
+                // toString()で文字列に変換し、それをtextという名前のTextViewに設定しています。
+                // これにより、入力欄の文字がそのまま表示欄にリアルタイムで表示されます。
+                binding.text.setText(editable.toString());
+            }
+        });
     }
 }
