@@ -13,6 +13,7 @@ import jp.ac.meijou.android.s241205155.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
+    private PrefDataStore prefDataStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,30 +27,26 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        prefDataStore = PrefDataStore.getInstance(this);
+        prefDataStore.getString("name")
+                .ifPresent(name -> binding.text.setText(name));
+
+
+        binding.saveButton.setOnClickListener(view -> {
+            var text = binding.editTextText.getText().toString();
+            prefDataStore.setString("name", text);
+        });
+
+
         binding.button.setOnClickListener(view -> {
             var text1 = binding.editTextText.getText().toString();
             binding.text.setText(text1);
         });
-
-        binding.editTextText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                // テキストが更新される直前に呼ばれる
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                // 文字を1つ入力された時に呼ばれる
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                // テキストが更新された"後"に呼ばれる処理です。
-                // 'editable'には、editTextTextの現在のテキストが入っています。
-                // toString()で文字列に変換し、それをtextという名前のTextViewに設定しています。
-                // これにより、入力欄の文字がそのまま表示欄にリアルタイムで表示されます。
-                binding.text.setText(editable.toString());
-            }
-        });
     }
+    protected void onStart() {
+        super.onStart();
+        prefDataStore.getString("name")
+                .ifPresent(name -> binding.text.setText(name));
+    }
+
 }
