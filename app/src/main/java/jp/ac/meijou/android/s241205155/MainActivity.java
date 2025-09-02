@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        //ここでapp_nameに置き換えている！
         binding.text.setText(R.string.app_name);
     }
 }
