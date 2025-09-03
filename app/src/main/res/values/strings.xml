@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">モバイルアプリ開発A</string>
     <string name="text">これはモバイルアプリ開発Aの授業内で作成したAndroidアプリです</string>
+    <string name="result_canceled">Result: Canceled</string>
+    <string name="result_unknown">Result: Unknown(%1$d)</string>
 </resources>
