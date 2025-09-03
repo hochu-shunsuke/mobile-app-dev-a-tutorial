@@ -9,14 +9,38 @@
     tools:context=".MainActivity2">
 
   <Button
-    android:id="@+id/button_to_main3"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="MainActivity3へ移動"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+      android:id="@+id/button_to_main3"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="59dp"
+      android:layout_marginTop="100dp"
+      android:layout_marginEnd="48dp"
+      android:text="明示的intentでMainActivity4へ"
+      app:layout_constraintEnd_toStartOf="@+id/button_to_yahoo"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <EditText
+      android:id="@+id/editText_for_main4"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:hint="MainActivity4へ送るテキスト"
+      app:layout_constraintTop_toBottomOf="@id/button_to_main3"
+      app:layout_constraintStart_toStartOf="@id/button_to_main3"
+      app:layout_constraintEnd_toEndOf="@id/button_to_yahoo" />
+
+  <Button
+      android:id="@+id/button_to_yahoo"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="48dp"
+      android:layout_marginTop="100dp"
+      android:layout_marginEnd="48dp"
+      android:text="Yahoo! JAPANを開く"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/button_to_main3"
+      app:layout_constraintTop_toTopOf="parent" />
 
   <TextView
       android:id="@+id/textView1"
@@ -24,7 +48,8 @@
       android:layout_height="wrap_content"
       android:text="TextView"
       android:visibility="visible"
-      app:layout_constraintTop_toBottomOf="@id/button_to_main3"
+      app:layout_constraintTop_toBottomOf="@+id/editText_for_main4"
+      android:layout_marginTop="16dp"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       />
