@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutMain2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+
+  <Button
+      android:id="@+id/button_to_main3"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="16dp"
+      android:text="明示的intentでMainActivity4へ"
+      app:layout_constraintEnd_toStartOf="@+id/button_to_yahoo"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <Button
+      android:id="@+id/button_to_yahoo"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:layout_marginEnd="16dp"
+      android:text="Yahoo! JAPANを開く"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/button_to_main3"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <EditText
+      android:id="@+id/editText_for_main4"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:hint="MainActivity4へ送るテキスト"
+      app:layout_constraintTop_toBottomOf="@id/button_to_main3"
+      app:layout_constraintStart_toStartOf="@id/button_to_main3"
+      app:layout_constraintEnd_toEndOf="@id/button_to_yahoo" />
+
+  <TextView
+      android:id="@+id/textView_result"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:text="Result"
+      android:textSize="18sp"
+      app:layout_constraintStart_toStartOf="@+id/editText_for_main4"
+      app:layout_constraintTop_toBottomOf="@+id/editText_for_main4" />
+
+  <Button
+      android:id="@+id/button_launch"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
+      android:text="起動"
+      android:textSize="18sp"
+      app:layout_constraintStart_toStartOf="@+id/textView_result"
+      app:layout_constraintTop_toBottomOf="@+id/textView_result" />
+
+  <TextView
+      android:id="@+id/textView1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:text="TextView"
+      app:layout_constraintStart_toStartOf="@+id/button_launch"
+      app:layout_constraintTop_toBottomOf="@+id/button_launch" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

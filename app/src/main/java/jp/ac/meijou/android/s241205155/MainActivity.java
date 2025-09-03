@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         binding.button.setOnClickListener(view -> {
             var text1 = binding.editTextText.getText().toString();
             binding.text.setText(text1);
+
         });
     }
     protected void onStart() {
