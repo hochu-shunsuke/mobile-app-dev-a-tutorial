@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity6">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/Main6imageView"
+                android:layout_width="350dp"
+                android:layout_height="350dp"
+                android:layout_marginTop="32dp"
+                android:contentDescription="@string/app_name"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- 文字サイズ -->
+            <TextView
+                android:id="@+id/Main6TextSizeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="文字サイズ"
+                app:layout_constraintTop_toBottomOf="@id/Main6imageView"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="16dp"/>
+            <EditText
+                android:id="@+id/Main6TextSizeInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="234"
+                app:layout_constraintTop_toBottomOf="@id/Main6imageView"
+                app:layout_constraintStart_toEndOf="@id/Main6TextSizeLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"/>
+
+            <!-- 文字色 -->
+            <TextView
+                android:id="@+id/Main6TextColorLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="文字色(16進)"
+                app:layout_constraintTop_toBottomOf="@id/Main6TextSizeInput"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="8dp"/>
+            <EditText
+                android:id="@+id/Main6TextColorInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:text="3d4070"
+                app:layout_constraintTop_toBottomOf="@id/Main6TextSizeInput"
+                app:layout_constraintStart_toEndOf="@id/Main6TextColorLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"/>
+
+            <!-- 背景色 -->
+            <TextView
+                android:id="@+id/Main6BgColorLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="背景色(16進)"
+                app:layout_constraintTop_toBottomOf="@id/Main6TextColorInput"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="8dp"/>
+            <EditText
+                android:id="@+id/Main6BgColorInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:text="a93d3d"
+                app:layout_constraintTop_toBottomOf="@id/Main6TextColorInput"
+                app:layout_constraintStart_toEndOf="@id/Main6BgColorLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"/>
+
+            <!-- 幅 -->
+            <TextView
+                android:id="@+id/Main6WidthLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="幅(px)"
+                app:layout_constraintTop_toBottomOf="@id/Main6BgColorInput"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="8dp"/>
+            <EditText
+                android:id="@+id/Main6WidthInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="500"
+                app:layout_constraintTop_toBottomOf="@id/Main6BgColorInput"
+                app:layout_constraintStart_toEndOf="@id/Main6WidthLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"/>
+
+            <!-- 高さ -->
+            <TextView
+                android:id="@+id/Main6HeightLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="高さ(px)"
+                app:layout_constraintTop_toBottomOf="@id/Main6WidthInput"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="8dp"/>
+            <EditText
+                android:id="@+id/Main6HeightInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="500"
+                app:layout_constraintTop_toBottomOf="@id/Main6WidthInput"
+                app:layout_constraintStart_toEndOf="@id/Main6HeightLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"/>
+
+            <!-- テキスト -->
+            <TextView
+                android:id="@+id/Main6TextLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="テキスト"
+                app:layout_constraintTop_toBottomOf="@id/Main6HeightInput"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="8dp"/>
+            <EditText
+                android:id="@+id/Main6TextInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:text="表示文字"
+                app:layout_constraintTop_toBottomOf="@id/Main6HeightInput"
+                app:layout_constraintStart_toEndOf="@id/Main6TextLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"/>
+
+            <Button
+                android:id="@+id/Main6button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="画像を更新"
+                app:layout_constraintTop_toBottomOf="@id/Main6TextInput"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
