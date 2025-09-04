@@ -44,7 +44,7 @@ public class MainActivity5 extends AppCompatActivity {
         });
 
         var request = new Request.Builder()
-                .url("https://api.github.com/gists/c2a7c39532239ff261be")
+                .url("https://mura.github.io/meijou-android-sample/gist.json")
                 .build();
 
         okHttpClient.newCall(request).enqueue(new Callback() {
@@ -56,13 +56,13 @@ public class MainActivity5 extends AppCompatActivity {
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
                 // レスポンスボディをGist型に変換
                 var gist = gistJsonAdapter.fromJson(response.body().source());
-                // 中身の取り出し
-                Optional.ofNullable(gist)
-                        .map(g -> g.files.get("OkHttp.txt"))
-                        .ifPresent(gistFile -> {
-                            // UIスレッド以外で更新するとクラッシュするので、UIスレッド上で実行させる
-                            runOnUiThread(() -> binding.text.setText(gistFile.content));
-                        });
+                // nullチェックを追加
+                if (gist != null && gist.files != null && gist.files.get("OkHttp.txt") != null) {
+                    var gistFile = gist.files.get("OkHttp.txt");
+                    runOnUiThread(() -> binding.text.setText(gistFile.content));
+                } else {
+                    runOnUiThread(() -> binding.text.setText("ファイルが見つかりません"));
+                }
             }
         });
     }
